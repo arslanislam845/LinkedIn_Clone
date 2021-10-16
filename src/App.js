@@ -1,58 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React,{useEffect}from "react";
+import "./App.css";
+import Header from "./components/Header";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+import Login from "./components/Login";
+import { auth } from "./server/firestore";
+import { useDispatch } from "react-redux";
+import { login, logout } from "./features/userSlice";
+import { BrowserRouter as Router, Switch,Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Jobs from "./pages/Jobs";
+import Messaging from "./pages/Messaging"
+import Network from "./pages/Network"
+import Notification from "./pages/Notification"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
-}
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        // user is logged in
+       
+        dispatch(
+          login({
+            Email: userAuth.email,
+            FullName: userAuth.displayName,
+            ProfileURL: userAuth.photoURL,
+            
+          })
+        )
+      } else {
+        // user is not logged in
+        dispatch(logout());
+      }
+      
+    })
+  },[]);
 
+  return (
+    <Router>
+    <>
+      {!user ? (
+        <Login />
+      ) : (
+
+      <div className="app">
+      <Header />
+      <div className="app_body">  
+        <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/jobs" component={Jobs} />
+        <Route path="/messaging" component={Messaging} />
+        <Route path="/network" component={Network} />
+        <Route path="/notification" component={Notification} />
+        </Switch>      
+      </div>
+    </div>
+   
+  )
+}
+  </>
+  </Router>
+);
+}
 export default App;

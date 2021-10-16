@@ -1,0 +1,89 @@
+.header_left > img {
+  object-fit: contain;
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.header_search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #eef3f8;
+  height: 40px;
+  border-radius: 5px;
+}
+.header_search > input {
+  border: none;
+  background: none;
+  outline: none;
+  color: grey;
+  
+}
+.header_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+.HeaderItem>a{
+  text-decoration: none;
+  color: gray;
+}
+a:hover {
+  cursor: pointer;
+  color: blue;
+}
+.header_right > button{
+  border: none;
+  color: gray;
+  background-color: white;
+  font-size: 17px;
+  padding: 0px 5px;
+  height: 20px;
+  width: auto;
+  margin-left: 1rem;
+  font-weight: 600;
+ 
+}
+button:hover{
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+
+.HeaderItem > div {
+  font-size: 12px;
+}
+.HeaderItem {
+  margin: 10px;
+  text-align: center;
+  color: gray;
+}
+
+.HeaderItem > img {
+  object-fit: contain;
+ 
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 2px;
+  background-color: white;
+  border-bottom: 0.1px solid gray;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  height: 77px;
+}

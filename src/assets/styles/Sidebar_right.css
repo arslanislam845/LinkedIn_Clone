@@ -1,0 +1,26 @@
+.Sidebar_right_main{
+   margin-left: 2%;
+   flex: 0.28;
+   margin-top: 2%;
+   background-color: white;
+   border: 0.1px solid #dfdedb;
+   border-radius: 10px;
+   height: 17%;
+  
+}
+.Sidebar_right_main>h2{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 15px;
+}
+.Sidebar_right{
+    margin-left: 1rem;
+}
+
+.Sidebar_right>h5{
+ margin-bottom: 0px;
+}
+
+.Sidebar_right>p{
+  margin-top: 0rem;
+}

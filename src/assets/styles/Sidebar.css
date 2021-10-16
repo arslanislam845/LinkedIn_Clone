@@ -1,0 +1,114 @@
+.sidebarLeft_Main {
+    margin-top: 2%;
+    flex: 0.18;
+    margin-left: 5%;
+  }
+  .sidebarLeft {
+    background-color: white;
+    text-align: center;
+    border: 0.1px solid #dfdedb;
+  }
+  .sidebarLeft > img {
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: -30px;
+    height: 70px;
+  }
+  .sidebarLeft > div > h4 {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .sidebarLeft > div > p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .avatarContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+  .sidebarLeft_stats > p {
+    font-size: 12px;
+  }
+  
+  .sidebarLeft_stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 10px;
+  }
+  .sidebarLeft_stats:hover {
+    cursor: pointer;
+    background-color: #f2f1ee;
+  }
+  .number_stats {
+    color: #4475c6;
+    font-weight: 600;
+  }
+  .sidebarLeft_Recent {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 0.1px solid #dfdedb;
+  }
+  .sidebarLeft_Recent > div > p {
+    margin-top: -10px;
+    font-size: 14px;
+    color: gray;
+    padding: 5px;
+  }
+  .sidebarLeft_Recent > h4 {
+    margin-top: 5px;
+    font-size: 17px;
+    color: gray;
+    padding: 5px 15px;
+    font-weight: bold;
+    margin-bottom: 13px;
+  }
+  .hashtags:hover {
+    cursor: pointer;
+    background-color: #f2f1ee;
+    color: black;
+  }
+
+  .sidebarLeft_Discover{
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 0.1px solid #dfdedb;
+
+  }
+  .sidebarLeft_Discover_items{
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(36, 36, 243);
+    padding: 10px 10px;
+    font-weight: bold;
+    border-bottom:  0.1px solid #dfdedb;
+  }
+
+  h5:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(10, 10, 121);
+  }
+  .sidebarLeft_Discover_items>h5{
+    margin-top: -15px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+  }
+.Discover_button>h4{
+  text-align: center;
+  color: gray;
+  font-weight: 500;
+  padding: 10px;
+  margin: 0px;
+ 
+}
+
+.Discover_button:hover{
+cursor: pointer;
+background-color:#dfdedb
+;}
