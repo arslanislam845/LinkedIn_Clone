@@ -18,6 +18,7 @@ const Addpost=()=>{
  const [InputPost,setInputPost]=useState('')
  const InputChangeHandler=(event)=>{
    setInputPost(event.target.value)
+//console.log(event.target.value)
  }
   const CreatePostHandler = (e)=>{
     e.preventDefault()
@@ -30,7 +31,6 @@ const Addpost=()=>{
     publishedAt: firebase.firestore.FieldValue.serverTimestamp(),})
     .catch(()=>alert("Opps! posts not save Error Occur"))
     setInputPost("");
-    
  }
  
   return(
